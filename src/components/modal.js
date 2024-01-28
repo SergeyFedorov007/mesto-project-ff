@@ -11,7 +11,7 @@ function closeModal(popup) {
 }
 // @todo: Обработчик закрытия модального окна по нажатию клавиши Esc
 function handleEscClose(evt) {
-  if (evt.key === "Escape") {
+  if (evt.key === "Escape" || null) {
     const popupOpened = document.querySelector(".popup_is-opened");
     closeModal(popupOpened);
   }

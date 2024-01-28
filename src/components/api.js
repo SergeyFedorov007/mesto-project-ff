@@ -13,7 +13,11 @@ const getResponse = (res) => {
 const getInitialUser = async () => {
   return fetch(config.baseUrl + "/users/me", {
     headers: config.headers,
-  }).then((res) => getResponse(res));
+  }).then((res) => {
+    console.log(res);
+    return getResponse(res)
+  });
+
 };
 
 const updateUser = async (user) => {

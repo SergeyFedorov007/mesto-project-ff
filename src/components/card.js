@@ -45,22 +45,22 @@ const likeCard = (evt, cardId) => {
   const currentLikes = evt.target.parentNode.querySelector(".card__like-count");
   if (evt.target.classList.contains("card__like-button_is-active")) {
     deleteLike(cardId)
-    .then((updatedCard) => {
-      evt.target.classList.remove("card__like-button_is-active");
-      currentLikes.textContent = updatedCard.likes.length;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then((updatedCard) => {
+        evt.target.classList.remove("card__like-button_is-active");
+        currentLikes.textContent = updatedCard.likes.length;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
     addLike(cardId)
-    .then((updatedCard) => {
-      evt.target.classList.add("card__like-button_is-active");
-      currentLikes.textContent = updatedCard.likes.length;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then((updatedCard) => {
+        evt.target.classList.add("card__like-button_is-active");
+        currentLikes.textContent = updatedCard.likes.length;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 };
 
